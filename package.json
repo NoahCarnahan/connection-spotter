@@ -1,0 +1,11 @@
+{
+  "name": "connection-spotter",
+  "title": "ConnectionSpotter",
+  "id": "jid1-SXxmTSif5CA3Jw",
+  "description": "ConnectionSpotter is a Firefox add-on that enhances the news reading experience by revealing hidden connections between politicians, business people, corporations, and organization",
+  "author": "Noah Carnahan <connectionspotter@gmail.com>",
+  "license": "MPL 2.0",
+  "version": "0.1",
+  
+  "homepage":"http://noahcarnahan.github.io/connection-spotter/"
+}

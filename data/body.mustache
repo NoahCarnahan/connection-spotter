@@ -1,0 +1,76 @@
+{{! This Source Code Form is subject to the terms of the Mozilla Public
+    License, v. 2.0. If a copy of the MPL was not distributed with this
+    file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+
+{{#politicians}}
+<h3>{{name}}</h3>
+
+{{#assets.length}}
+<h4>Assets <small>(2011)</small> 
+    <span class="h5"><span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="bottom" title="{{name}} listed the following among his or her personal assets in the 2011 filing. Click on the amount to view more detailed information. (More recent filings were not digitally available at the time of publishing.)"></span></span>
+</h4>
+<div class="panel panel-default">
+    <table class="table table-condensed">
+        <tr><th>Company</th><th>Amount</th></tr>
+        {{#assets}}
+        <tr>
+            <td>{{entity_compare_string}}</td>
+            <td><a href="http://www.opensecrets.org/pfds/CIDsummary.php?CID={{crp_id}}&year=2011">${{minvalue}} - ${{maxvalue}}</a></td>
+        </tr>
+        {{/assets}}
+    </table>
+</div>
+{{/assets.length}}
+
+{{#chains.length}}
+<h4> Chains 
+    <span class="h5"><span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="bottom" title="The following chains show the ways in which {{name}} is related to other people and organizations. Click on the relationship description for more detailed information about the relationship (including dates) and for the source of the information."></span></span>
+</h4>
+{{#chains}}
+<div class="panel panel-default">
+    <div class="panel-heading">
+          {{startName}} <span class="glyphicon glyphicon-arrow-right"></span> {{endName}}
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item text-center">
+            {{#names}}
+            <div>{{n}}</div>
+            {{#arrow}}
+            <div style="font-size: 9px;"><span class="glyphicon glyphicon-arrow-down"></span></div>
+            {{/arrow}}
+            {{/names}}
+        </li>
+        {{#relationships}}
+        <li class="list-group-item">
+          <div>
+              {{ent1}} <span style="font-size: 12px;"class="glyphicon glyphicon-arrow-right"></span> {{ent2}}
+          </div>
+          <div>
+              <a href="{{link}}">{{text}}</a>
+          </div>
+        </li>
+        {{/relationships}}
+      </ul>
+</div>
+{{/chains}}
+{{/chains.length}}
+<hr>
+{{/politicians}}
+
+{{#politicians.length}}
+<div class="small">Asset data provided by <a href="http://www.opensecrets.org/pfds/overview.php?type=F&year=2011">OpenSecrets.org</a></div>
+<div class="small">Chain data provided by <a href="http://littlesis.org/">LittlSis.org</a></div>
+<div class="small">Entity extraction powered by <a href="http://poligraft.com/about">Poligraft.com</a></div>
+<div class="small">Eye icon by <a href="http://designmodo.com">designmodo</a></div>
+<div class="small">Asset data licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY-NC-SA 3.0</a></div>
+<div class="small">Chain data licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/us/">CC BY-SA 3.0 US</a></div>
+<div class="small"><a href="http://noahcarnahan.github.io/connection-spotter/#disclaimer">Disclaimer</a></div>
+{{/politicians.length}}
+
+{{^politicians}}
+<div class="panel panel-default">
+    <div class="panel-body">
+    No connections found.
+    </div>
+</div>
+{{/politicians}}
