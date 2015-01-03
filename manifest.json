@@ -1,0 +1,57 @@
+{
+  "manifest_version": 2,
+
+  "name": "Connection Spotter",
+   //TODO: write description
+  "description": "",
+  "version": "0.0.1",
+
+  "content_scripts": [
+    {
+      "matches": [
+          "*://*.nytimes.com/*",
+          "*://*.politico.com/*",
+
+          // From http://www.alexa.com/topsites/category;0/Top/News :
+          "*://news.yahoo.com/*",
+          "*://*.cnn.com/*",
+          "*://*.huffingtonpost.com/*",
+          "*://news.google.com/*",
+          "*://*.thegaurdian.com/*",
+          "*://*.forbes.com/*",
+          "*://*.bbc.co.uk/news/*",
+          "*://*.foxnews.com/*",
+          "*://*.washingtonpost.com/*",
+          "*://*.wsj.com/*",
+          "*://*.usatoday.com/*",
+          "*://*.time.com/*",
+          "*://*.bloomberg.com/*",
+          "*://*.individual.com/*",
+          "*://*.abcnews.go.com/*",
+          "*://*.nbcnews.com/*",
+          "*://*.drudgereports.com/*",
+          "*://*.latimes.com/*",
+          "*://*.nypost.com/*",
+          "*://*.cnbc.com/*",
+          "*://*.chron.com/*",
+          "*://*.sfgate.com/*",
+          "*://my.yahoo.com/*",
+          "*://*.theatlantic.com/*",
+          "*://*.cbsnews.com/*",
+          "*://*.businessweek.com/*",
+          "*://*.topix.com/*",
+          "*://*.usnews.com/*"
+          // TODO: Finish this list
+
+      ],
+      "js": [
+          // TODO: Specify exact commits in bower.json
+          //       If the structure of the repo changes, this will break.
+          "bower_components/readability-extract/readability.js",
+          "bower_components/jquery/dist/jquery.min.js",
+          "main.js"
+      ]
+    }
+  ],
+  "permissions": ["http://*/"]
+}
